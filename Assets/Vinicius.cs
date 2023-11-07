@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teste : MonoBehaviour
+public class Vinicius : MonoBehaviour
 {
-    [SerializeField] string _nome;
-    [SerializeField] int _number;
-    [SerializeField] float _dec;
-    [SerializeField] bool _check;
     // Start is called before the first frame update
     void Start()
     {

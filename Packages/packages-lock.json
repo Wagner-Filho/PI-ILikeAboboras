@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "com.unity.2d.animation": {
+<<<<<<< HEAD
       "version": "9.0.3",
+=======
+      "version": "9.0.4",
+>>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -83,7 +87,11 @@
       }
     },
     "com.unity.2d.tilemap.extras": {
+<<<<<<< HEAD
       "version": "3.1.1",
+=======
+      "version": "3.1.2",
+>>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -94,6 +102,7 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.ai.navigation": {
       "version": "1.1.4",
       "depth": 0,
@@ -105,6 +114,10 @@
     },
     "com.unity.burst": {
       "version": "1.8.8",
+=======
+    "com.unity.burst": {
+      "version": "1.8.9",
+>>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
       "depth": 3,
       "source": "registry",
       "dependencies": {
@@ -176,6 +189,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.sysroot": {
       "version": "2.0.7",
       "depth": 1,
@@ -192,6 +206,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
     "com.unity.test-framework": {
       "version": "1.1.33",
       "depth": 0,
