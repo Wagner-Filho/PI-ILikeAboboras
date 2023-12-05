@@ -1,11 +1,7 @@
 {
   "dependencies": {
     "com.unity.2d.animation": {
-<<<<<<< HEAD
       "version": "9.0.3",
-=======
-      "version": "9.0.4",
->>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -87,11 +83,7 @@
       }
     },
     "com.unity.2d.tilemap.extras": {
-<<<<<<< HEAD
       "version": "3.1.1",
-=======
-      "version": "3.1.2",
->>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -102,22 +94,8 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.ai.navigation": {
-      "version": "1.1.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.ai": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.burst": {
       "version": "1.8.8",
-=======
-    "com.unity.burst": {
-      "version": "1.8.9",
->>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
       "depth": 3,
       "source": "registry",
       "dependencies": {
@@ -165,7 +143,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.25",
+      "version": "3.0.24",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -174,11 +152,20 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.21",
+      "version": "2.0.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.7.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -189,7 +176,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
     "com.unity.sysroot": {
       "version": "2.0.7",
       "depth": 1,
@@ -206,8 +192,6 @@
       },
       "url": "https://packages.unity.com"
     },
-=======
->>>>>>> 73393e11cb634ef3091ec3fad5fd2a93d0b0c25c
     "com.unity.test-framework": {
       "version": "1.1.33",
       "depth": 0,
@@ -260,7 +244,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.1",
+      "version": "1.9.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
