@@ -9,7 +9,7 @@ public class Move : MonoBehaviour
     [SerializeField] bool isFacing;
 
     Rigidbody2D rig;
-    Vector2 moveDirection;
+    public Vector2 moveDirection;
 
     private void Awake()
     {
@@ -18,10 +18,11 @@ public class Move : MonoBehaviour
 
     private void Start()
     {
-
+        isWalking = false;
     }
 
-    public void SetMove(InputAction.CallbackContext value)
+    public void SetMovey(InputAction.CallbackContext value)
+
     {
         moveDirection = value.ReadValue<Vector2>();
     }

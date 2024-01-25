@@ -229,9 +229,10 @@ GameObject:
   - component: {fileID: 1924387017}
   - component: {fileID: 1924387021}
   - component: {fileID: 1924387022}
+  - component: {fileID: 1924387023}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -272,8 +273,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.23, y: 0.39}
-    newSize: {x: 1, y: 2}
+    oldSize: {x: 0.023, y: 0.032}
+    newSize: {x: 0.23, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -349,12 +350,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1507021762, guid: a42ccef9b3e1bd2439e703694ccc9944, type: 3}
+  m_Sprite: {fileID: 1184384734, guid: f0e8cde336f8fff4cb801030fb8dcc03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.23, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -369,8 +370,8 @@ Transform:
   m_GameObject: {fileID: 1924387016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.691, y: -0.6954, z: 0}
-  m_LocalScale: {x: 5.1520205, y: 5.1520205, z: 5.1520205}
+  m_LocalPosition: {x: -0.04, y: -0.55, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -389,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   isFacing: 0
+  moveDirection: {x: 0, y: 0}
 --- !u!114 &1924387022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +420,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1924387021}
         m_TargetAssemblyTypeName: Move, Assembly-CSharp
-        m_MethodName: SetMove
+        m_MethodName: SetMovey
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -431,10 +433,31 @@ MonoBehaviour:
     m_ActionId: 65ac7fe6-1480-44e3-aeb0-98f09b1d4175
     m_ActionName: ControlleP/New action[/Keyboard/w,/Keyboard/s,/Keyboard/d,/Keyboard/a,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Controles
+  m_DefaultControlScheme: 
   m_DefaultActionMap: ControlleP
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &1924387023
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924387016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dcebf2428a85f1d4ea4cc0f37095a9cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1978415464
 GameObject:
   m_ObjectHideFlags: 0
