@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private Animator anim;
+    public GameObject _collision;
     [SerializeField] private bool colPlayer;
     void Start()
     {
@@ -21,9 +22,11 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             colPlayer = true;
+            _collision.SetActive(false);
+          
         }
 
     }
@@ -33,6 +36,7 @@ public class Door : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             colPlayer = false;
+            _collision.SetActive(true);
         }
     }
 }
