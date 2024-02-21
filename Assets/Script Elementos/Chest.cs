@@ -5,10 +5,12 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     private Animator anim;
+    private DropItens dropScript;
     [SerializeField] private bool colPlayer;
     void Start()
     {
         anim = GetComponent<Animator>();
+        dropScript = GetComponent<DropItens>();
     }
 
     void Update()
@@ -33,6 +35,7 @@ public class Chest : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             colPlayer= false;
+            dropScript.Drop();
         }
     }
 }

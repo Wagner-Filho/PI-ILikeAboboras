@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Move : MonoBehaviour
 {
      
-     float speed = 20; 
+     float speed = 10; 
      bool isFacing, 
      isWalking = false;
 

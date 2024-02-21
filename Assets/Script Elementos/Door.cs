@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
         {
             colPlayer = true;
             _collision.SetActive(false);
-          
+
         }
 
     }
