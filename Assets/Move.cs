@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 public class Move : MonoBehaviour
 {
      
-     float speed = 7; 
-     bool isFacing, 
-     isWalking = false;
+     float speed = 7;
+    bool isFacing,
+         isWalking = false,
+         CheckAttack;
 
     Rigidbody2D rig;
     public Vector2 moveDirection;
@@ -30,6 +31,11 @@ public class Move : MonoBehaviour
         moveDirection = value.ReadValue<Vector2>();
     }
 
+    public void SetAttack(InputAction.CallbackContext value)
+    {
+        CheckAttack = true;
+    }
+
     private void Update()
     {
         MoveP();
@@ -39,6 +45,7 @@ public class Move : MonoBehaviour
     {
         rig.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
         isWalking = (moveDirection.x != 0 || moveDirection.y != 0);
+        
 
         if (isWalking)
         {
@@ -55,7 +62,14 @@ public class Move : MonoBehaviour
        else if (moveDirection.x > 0 && isFacing == true)
        {
             Flip();
-        }
+       }
+       playerAnimator.SetBool("Attack", CheckAttack);
+
+    }
+
+    public void checkAttack()
+    {
+        CheckAttack = false; 
     }
 
     public void Flip()
