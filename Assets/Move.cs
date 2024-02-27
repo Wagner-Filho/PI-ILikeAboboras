@@ -24,7 +24,7 @@ public class Move : MonoBehaviour
         isWalking = false;
     }
 
-    public void SetMovey(InputAction.CallbackContext value)
+    public void SetMove(InputAction.CallbackContext value)
 
     {
         moveDirection = value.ReadValue<Vector2>();

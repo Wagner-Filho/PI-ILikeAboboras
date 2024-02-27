@@ -35,6 +35,15 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""14b720d1-c13c-4c3a-b1cd-d922226cb9be"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -147,6 +156,28 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""26f4d79a-fa4b-4984-b4b8-4be61321a5b1"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controles"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""506ea490-a64c-4fd2-9b65-dcc12ed722bf"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controles"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -173,6 +204,7 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
         // ControlleP
         m_ControlleP = asset.FindActionMap("ControlleP", throwIfNotFound: true);
         m_ControlleP_Move = m_ControlleP.FindAction("Move", throwIfNotFound: true);
+        m_ControlleP_Attack = m_ControlleP.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -235,11 +267,13 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_ControlleP;
     private List<IControllePActions> m_ControllePActionsCallbackInterfaces = new List<IControllePActions>();
     private readonly InputAction m_ControlleP_Move;
+    private readonly InputAction m_ControlleP_Attack;
     public struct ControllePActions
     {
         private @Controlle m_Wrapper;
         public ControllePActions(@Controlle wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_ControlleP_Move;
+        public InputAction @Attack => m_Wrapper.m_ControlleP_Attack;
         public InputActionMap Get() { return m_Wrapper.m_ControlleP; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -252,6 +286,9 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
         }
 
         private void UnregisterCallbacks(IControllePActions instance)
@@ -259,6 +296,9 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
         }
 
         public void RemoveCallbacks(IControllePActions instance)
@@ -288,5 +328,6 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
     public interface IControllePActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }
