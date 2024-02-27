@@ -160,7 +160,7 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""26f4d79a-fa4b-4984-b4b8-4be61321a5b1"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controles"",
@@ -195,6 +195,11 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
                 {
                     ""devicePath"": ""<Keyboard>"",
                     ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]

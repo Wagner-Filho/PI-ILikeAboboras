@@ -52,7 +52,7 @@ public class Move : MonoBehaviour
         {
             Flip();
         }
-        else if (moveDirection.x > 0 && isFacing == true)
+       else if (moveDirection.x > 0 && isFacing == true)
        {
             Flip();
         }
