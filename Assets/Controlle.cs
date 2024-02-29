@@ -44,6 +44,15 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""b1a2a87d-cf37-4786-8e3d-c686fe927518"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -178,6 +187,28 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4ab22b3-54cb-44c1-b09a-14c03ac6b3de"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""006c0f9d-e3ff-45a7-87f7-705cd88b4776"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -210,6 +241,7 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
         m_ControlleP = asset.FindActionMap("ControlleP", throwIfNotFound: true);
         m_ControlleP_Move = m_ControlleP.FindAction("Move", throwIfNotFound: true);
         m_ControlleP_Attack = m_ControlleP.FindAction("Attack", throwIfNotFound: true);
+        m_ControlleP_Dash = m_ControlleP.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,12 +305,14 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
     private List<IControllePActions> m_ControllePActionsCallbackInterfaces = new List<IControllePActions>();
     private readonly InputAction m_ControlleP_Move;
     private readonly InputAction m_ControlleP_Attack;
+    private readonly InputAction m_ControlleP_Dash;
     public struct ControllePActions
     {
         private @Controlle m_Wrapper;
         public ControllePActions(@Controlle wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_ControlleP_Move;
         public InputAction @Attack => m_Wrapper.m_ControlleP_Attack;
+        public InputAction @Dash => m_Wrapper.m_ControlleP_Dash;
         public InputActionMap Get() { return m_Wrapper.m_ControlleP; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -294,6 +328,9 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
         }
 
         private void UnregisterCallbacks(IControllePActions instance)
@@ -304,6 +341,9 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
         }
 
         public void RemoveCallbacks(IControllePActions instance)
@@ -334,5 +374,6 @@ public partial class @Controlle: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }
