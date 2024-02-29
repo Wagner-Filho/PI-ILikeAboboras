@@ -15,6 +15,13 @@ public class Move : MonoBehaviour
     public Vector2 moveDirection;
     public Animator playerAnimator;
 
+    [Header("Dash Settigns")]
+    public float dashSpeed;
+    public float dashDuration;
+    public float dashCooldown;
+    bool isDashing;
+    bool canDash;
+
     private void Awake()
     {
         rig = GetComponent<Rigidbody2D>();
