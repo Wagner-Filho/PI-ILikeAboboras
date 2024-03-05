@@ -7,6 +7,8 @@ public class Chest : MonoBehaviour
     private Animator anim;
     private DropItens dropScript;
     [SerializeField] private bool colPlayer;
+    bool itemPego;
+    [SerializeField] GameObject Particula;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -32,10 +34,12 @@ public class Chest : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" && itemPego==false)
         {
             colPlayer= false;
+            itemPego = true;
             dropScript.Drop();
+            Particula.SetActive(true);
         }
     }
 }
