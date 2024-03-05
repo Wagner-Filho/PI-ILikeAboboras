@@ -50,9 +50,19 @@ public class Move : MonoBehaviour
 
     private void MoveP()
     {
-        rig.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
-        isWalking = (moveDirection.x != 0 || moveDirection.y != 0);
+        //rig.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
+        //isWalking = (moveDirection.x != 0 || moveDirection.y != 0);
         
+        if (CheckAttack)
+        {
+            rig.velocity = Vector2.zero;
+            isWalking = false;
+        }
+        else
+        {
+            rig.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
+            isWalking = (moveDirection.x != 0 || moveDirection.y != 0);
+        }
 
         if (isWalking)
         {
