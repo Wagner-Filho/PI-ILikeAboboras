@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Move : MonoBehaviour
 {
      
-     float speed = 7;
+    float speed = 7;
     bool isFacing,
          isWalking = false,
          CheckAttack;
@@ -70,13 +70,14 @@ public class Move : MonoBehaviour
        {
             Flip();
        }
-       playerAnimator.SetBool("Attack", CheckAttack);
+
+        playerAnimator.SetBool("Attack", CheckAttack);
 
     }
 
     public void checkAttack()
     {
-        CheckAttack = false; 
+        CheckAttack = false;
     }
 
     public void Flip()
