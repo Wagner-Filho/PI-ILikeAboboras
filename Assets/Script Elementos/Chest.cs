@@ -8,7 +8,6 @@ public class Chest : MonoBehaviour
     private DropItens dropScript;
     [SerializeField] private bool colPlayer;
     bool itemPego;
-    [SerializeField] GameObject Particula;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -39,7 +38,6 @@ public class Chest : MonoBehaviour
             colPlayer= false;
             itemPego = true;
             dropScript.Drop();
-            Particula.SetActive(true);
         }
     }
 }
