@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6497762294280612947}
   - component: {fileID: 3137414712028440363}
   - component: {fileID: 8077813977030829095}
-  - component: {fileID: 8023350602081069923}
   - component: {fileID: 5766321110227823300}
   - component: {fileID: 3554322160655214102}
   m_Layer: 0
@@ -190,7 +189,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8023350602081069923}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetMove
         m_Mode: 0
@@ -206,7 +205,7 @@ MonoBehaviour:
     m_ActionName: ControlleP/New action[/Keyboard/w,/Keyboard/s,/Keyboard/d,/Keyboard/a,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8023350602081069923}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetAttack
         m_Mode: 0
@@ -222,7 +221,7 @@ MonoBehaviour:
     m_ActionName: ControlleP/Attack[/Keyboard/z]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8023350602081069923}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: SetDash
         m_Mode: 0
@@ -241,25 +240,6 @@ MonoBehaviour:
   m_DefaultActionMap: ControlleP
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8023350602081069923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591593470236565877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dab792b87886ce43beb4a7450ec3cf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  move: {x: 0, y: 0}
-  walkSpeed: 4
-  rb: {fileID: 6497762294280612947}
-  playerAnimator: {fileID: 5766321110227823300}
-  dashSpeed: 12
-  dashDuration: 0.1
-  dashCooldown: 1
 --- !u!95 &5766321110227823300
 Animator:
   serializedVersion: 5
