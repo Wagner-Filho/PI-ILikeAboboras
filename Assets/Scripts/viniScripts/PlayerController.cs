@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class PlayerController : MonoBehaviour
 {
     [Header("Walk Settings")]
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Moving();
-        Dashing();
+    //    Dashing();
     }
 
     public void SetMove(InputAction.CallbackContext value)
@@ -54,8 +56,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        rb.velocity = new Vector2(move.x * walkSpeed, move.y * walkSpeed);
-        isWalking = (move.x != 0 || move.y != 0);
+        if (CheckAttack)
+        {
+            rb.velocity = Vector2.zero;
+            isWalking = false;
+        }
+        else
+        {
+            rb.velocity = new Vector2(move.x * walkSpeed, move.y * walkSpeed);
+            isWalking = (move.x != 0 || move.y != 0);
+        }
 
         if (isWalking)
         {
@@ -97,13 +107,13 @@ public class PlayerController : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    private void Dashing()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && canDash)
-        {
-            StartCoroutine(Dash());
-        }
-    }
+    // private void Dashing()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Space) && canDash)
+    //     {
+    //         StartCoroutine(Dash());
+    //     }
+    // }
 
     public void SetDash(InputAction.CallbackContext value)
     {
