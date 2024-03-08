@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
@@ -22,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown;
     bool isDashing;
     bool canDash;
+    public Image CooldownBar;
+    public float maxCooldown;
+    public float coolDownDuration;
 
     [Header("Attack Settings")]
     bool CheckAttack;
@@ -36,6 +40,7 @@ public class PlayerController : MonoBehaviour
         isWalking = false;
         isDashing = false;
         canDash = true;
+        maxCooldown = dashCooldown;
     }
 
     void Update()
@@ -85,6 +90,8 @@ public class PlayerController : MonoBehaviour
         }
 
         playerAnimator.SetBool("Attack", CheckAttack);
+
+        CooldownBar.fillAmount = Mathf.Clamp(dashCooldown / maxCooldown, 0, 1);
     }
 
     private IEnumerator Dash()
@@ -93,9 +100,11 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         rb.velocity = new Vector2(move.x * dashSpeed, move.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
+        maxCooldown =- 1;
         isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
+        maxCooldown =+ 1;
         canDash = true;
     }
 

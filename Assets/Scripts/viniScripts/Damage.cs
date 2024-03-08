@@ -21,7 +21,7 @@ public class Damage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            phealth.health -= damage;
+            other.gameObject.GetComponent<PlayerHealth>().health -= damage;
         }
     }
 }
