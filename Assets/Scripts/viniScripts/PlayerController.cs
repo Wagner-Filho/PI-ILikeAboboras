@@ -29,10 +29,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Attack Settings")]
     bool CheckAttack;
+    private EnemyDamage atq;
 
     void Awake()
     {
         rb.GetComponent<Rigidbody2D>();
+        atq.GetComponent<EnemyDamage>();
     }
 
     void Start()
@@ -134,6 +136,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetAttack(InputAction.CallbackContext value)
     {
+        atq.Golpe();
         CheckAttack = true;
     }
 

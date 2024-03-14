@@ -199,6 +199,9 @@ MonoBehaviour:
   _scaleX: 0
   _dir: 0
   _isFacing: 0
+  _distPlayer: 0
+  _distance: 0
+  _vdis: 5
 --- !u!114 &6632056085164957659
 MonoBehaviour:
   m_ObjectHideFlags: 0
