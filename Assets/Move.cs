@@ -68,7 +68,6 @@ public class Move : MonoBehaviour
     {
         //rig.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
         //isWalking = (moveDirection.x != 0 || moveDirection.y != 0);
-        
         if (isDashing)
         {
             return;
