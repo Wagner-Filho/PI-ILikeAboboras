@@ -29,12 +29,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Attack Settings")]
     bool CheckAttack;
-    private EnemyDamage atq;
+    public EnemyDamage atq;
 
     void Awake()
     {
         rb.GetComponent<Rigidbody2D>();
-        atq.GetComponent<EnemyDamage>();
+        atq.GetComponent<EnemyDamage>().Golpe();
     }
 
     void Start()
